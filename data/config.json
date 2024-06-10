@@ -1,20 +1,20 @@
 {
-    "chainId": "84532",
-    "name": "test NFT",
-    "symbol": "TN6",
-    "description": "Dynamic NFTs test #6",
+    "chainId": "421614",
+    "name": "ArbiDev Legends",
+    "symbol": "ADL",
+    "description": "Be part of the best community of Devs for the Arbitrum community",
     "path": "nft",
     "image": "cover.png",
     "drops": {
         "gen0": {
-            "name": "Generation 0 - Drop",
-            "description": "NFT Drop Description",
+            "name": "Generation 0 - Legends",
+            "description": "First generation of Arbitrum Coding Legends",
             "qty": 10,
-            "price": "0.001",
+            "price": "0.0001",
             "referral": "2",
             "image": "cover.png",
-            "nftName": "NFT #${tokenId}",
-            "nftDescription": "NFT ${tokenId}"
+            "nftName": "ArbiDev #${tokenId}",
+            "nftDescription": "Arbidev Legend Number ${tokenId}"
         }
     }
 }
