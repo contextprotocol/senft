@@ -1,10 +1,7 @@
-import { Document } from "@contextprotocol/sdk";
 import { parseEther } from "ethers";
 import { loadConf, getContext, getBlockchain, getDrop } from "./utils";
 import { error, title, spinStart, spinStop, log } from "./utils/console";
 import fs from "fs";
-
-
 
 async function main(dropName: string, action = "open") {
   

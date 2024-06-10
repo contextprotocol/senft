@@ -1,6 +1,7 @@
 // import { ethers } from "ethers";
 import { getContext, getBlockchain, loadData, loadConf } from "./utils";
 import { log, title, spinStart, spinStop } from "./utils/console";
+import fs from "fs";
 
 async function main() {
 
@@ -59,7 +60,12 @@ async function main() {
     await collectionDocument.update(data);
     spinStop();
     log('Collection metadata  : ', `https://app.ctx.xyz/d/${domainName}/${confData.path}` )
-    
+
+    fs.writeFileSync(`./data/nfts/${tokenId}.json`, JSON.stringify({
+      versionNumber: '1.0.0',
+      data
+    }));
+
     // Step three : update the NFT (metadata).
     spinStart('Updating NFT metadata');
     data = {...dropDocument.data}
@@ -67,40 +73,7 @@ async function main() {
     await dropDocument.update(data);
     spinStop();
     log('Drop metadata        : ', `https://app.ctx.xyz/d/${domainName}/drops/${dropName}` )
-
   });
-
-  
-/*
-  nftData.metadata.image = `https://rpc.ctx.xyz/${domainName}/${confData.path}/${tokenId}`,
-
-  // Upload new asset : Contract image
-  title(`Create NFT metadata #${tokenId}`);
-  console.log(`${confData.path}/assets/${tokenId}`);
-  log('Image : ', nftData.nftImage);
-  spinStart('Uploading Asset to Context');
-  await context.createAsset(`${confData.path}/assets/${tokenId}`, nftData.nftImage);
-  spinStop();
-  
-  // Create new document.
-  title(`Create metadata ${confData.path}/${tokenId}`);
-  spinStart('Storing metadata to Context');
-  await context.createDocument(
-    `${confData.path}/${tokenId}`,
-    nftData.metadata,
-    ['web3/templates/nft']
-  );
-  spinStop();
-
-  title(`Update metadata ${confData.path}/${tokenId}`);
-  spinStart('Updating NFT metadata');
-  const data = {...document.data}
-  data.totalSupply += 1;
-  await document.update(data);
-
-  spinStop();
-  title('NFT metadata created successfully');
-  */
 }
 
 main();
