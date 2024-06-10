@@ -1,14 +1,14 @@
 {
     "chainId": "84532",
     "name": "test NFT",
-    "symbol": "TN5",
-    "description": "Dynamic NFTs test #5",
+    "symbol": "TN6",
+    "description": "Dynamic NFTs test #6",
     "path": "nft",
     "image": "cover.png",
     "drops": {
         "gen0": {
             "name": "Generation 0 - Drop",
-            "description": "Generation 0 - NFT Drop",
+            "description": "NFT Drop Description",
             "qty": 10,
             "price": "0.001",
             "referral": "2",
@@ -18,5 +18,3 @@
         }
     }
 }
-
-

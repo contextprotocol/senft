@@ -1,8 +1,11 @@
-# SENFT : Semantic Evidence Non-Fungible Token
-SENFT, short for Semantic Evidence Non-Fungible Token, represents semantic and dynamic NFTs in Context. As a token, SENFT embodies the concept of non-fungibility, ensuring that each instance is unique and cannot be replaced by another identical token. The "**Semantic**" prefix highlights the token's ability to carry meaning and context beyond mere representation, as it can be augmented with metadata and attributes that evolve over time. 
+# xpNFTs (Experience-Driven Non-Fungible Tokens)
 
-Moreover, the term "**Evidence**" underscores the importance of provenance and traceability, allowing SENFTs to maintain a record of their history and changes on-chain. This means that users can verify the authenticity, integrity, and evolution of SENFTs, providing unparalleled transparency and trustworthiness in the digital asset space. By combining semantic meaning with evidence-based provenance, SENFTs revolutionize the way we think about digital ownership and representation.
+xpNFTs, short for Experience-Driven Non-Fungible Tokens, are dynamic and interactive tokens designed to revolutionize the way we think about digital assets in the Context ecosystem. As unique tokens, xpNFTs embody the core principle of non-fungibility, ensuring each instance is distinct and irreplaceable.
 
+## Key Features of xpNFTs
+- *Semantic Integration*: xpNFTs carry rich, meaningful metadata that evolves over time. This semantic layer allows the tokens to provide more context and meaning beyond simple ownership, enabling deeper connections and interactions within the ecosystem.
+- *Provenance and Evidence*: xpNFTs maintain a transparent and immutable record of their history and changes on-chain. This provenance ensures authenticity, integrity, and trustworthiness, allowing users to verify the evolution and origins of each token.
+- *Dynamic Attributes*: xpNFTs are not static. Their attributes can change based on user actions, achievements, or real-world events. This dynamism makes xpNFTs more engaging and valuable over time, as they can adapt and evolve in response to various stimuli.
 # Getting started
 
 ## Modify, test and deploy your own NFT Contract
@@ -33,12 +36,12 @@ This script will:
 2. Upload the assets (image)
 3. Create the metadata in Context for the NFT Contract
 
-# Mint NFTs
+# Drops : Mint NFTs
 
-## Single NFT
+Edit comnf,. drops.
 You are ready to mint an NFT
 ```shell
-npm run mint
+npm run drop gen0
 ```
 
 ## Drops
@@ -46,8 +49,3 @@ You are ready to mint an NFT
 ```shell
 npm run mint
 ```
-
-# Marketplace
-## Sell
-## Buy
-## Bid

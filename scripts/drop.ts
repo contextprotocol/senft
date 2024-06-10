@@ -89,6 +89,12 @@ async function createDropDocument(context, drop, dropName, dropId, domainName, t
     []
   );
   spinStop();
+  
+  const dir = './data/drops';
+
+  if (!fs.existsSync('./data/drops')) fs.mkdirSync('./data/drops', { recursive: true });
+  if (!fs.existsSync('./data/nfts')) fs.mkdirSync('./data/nfts', { recursive: true });
+
   fs.writeFileSync(`./data/drops/${dropId}.json`, JSON.stringify({
     dropName,
     totalSupply: drop.qty
