@@ -1,13 +1,12 @@
-# Synamic NFTs using Context
-Create Dynamic NFTs using Context
-Link to the tutorial
+# SENFT : Semantic Evidence Non-Fungible Token
+SENFT, short for Semantic Evidence Non-Fungible Token, represents semantic and dynamic NFTs in Context. As a token, SENFT embodies the concept of non-fungibility, ensuring that each instance is unique and cannot be replaced by another identical token. The "**Semantic**" prefix highlights the token's ability to carry meaning and context beyond mere representation, as it can be augmented with metadata and attributes that evolve over time. 
+
+Moreover, the term "**Evidence**" underscores the importance of provenance and traceability, allowing SENFTs to maintain a record of their history and changes on-chain. This means that users can verify the authenticity, integrity, and evolution of SENFTs, providing unparalleled transparency and trustworthiness in the digital asset space. By combining semantic meaning with evidence-based provenance, SENFTs revolutionize the way we think about digital ownership and representation.
 
 # Getting started
 
-## Modify, test and deploy your NFT Contract
-This step is using the metadata created in Step one, don't miss it.
-
-Edit/Verify contracts/NFTCollection and test
+## Modify, test and deploy your own NFT Contract
+Edit contracts/NFTCollection and test the contract
 ```shell
 npm run test
 ```
