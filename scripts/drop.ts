@@ -47,7 +47,8 @@ async function main(dropName: string, action = "open") {
     await uploadCover(context, drop, dropId, domainName);
 
     // step Four : Create the document for the drop.
-    await createDropDocument(context, drop, dropName, dropId, domainName, transactionHash)
+    const collectionId = `ctx:${domainName}/${confData.path}`;
+    await createDropDocument(context, drop, dropName, dropId, domainName, collectionId, transactionHash)
     process.exit();
   }
 }
@@ -66,16 +67,17 @@ async function closeDrop(flexmarketContract, drop, dropDocument) {
   spinStop();
 }
 
-async function createDropDocument(context, drop, dropName, dropId, domainName, transactionHash) {
+async function createDropDocument(context, drop, dropName, dropId, domainName, collectionId,  transactionHash) {
   spinStart(`Creating context document`);
   const res = await context.createDocument(
     `drops/${dropName}`,
     {
       name: drop.name,
       description: drop.description,
+      collection: collectionId,
       nftName: drop.nftName,
       nftDescription: drop.nftDescription,
-      minterContract: "ctx:flexmarket/",
+      minterContract: "ctx:flexmarket",
       dropId: dropId,
       totalSupply: drop.qty,
       totalMinted: 0,
@@ -127,6 +129,11 @@ async function logDrop(drop) {
 
 async function createDrop(flexmarketContract, target, drop, treasury): Promise<{dropId: string, transactionHash: string}> {
   return new Promise(async (resolve) => {
+
+    flexmarketContract.on("CreateDrop", (newDropId)=> {
+      resolve({dropId: newDropId.toString() , transactionHash});
+    });
+
     let tx = await flexmarketContract.createDrop(
       target,
       drop.qty,
@@ -135,9 +142,6 @@ async function createDrop(flexmarketContract, target, drop, treasury): Promise<{
       treasury
     );
     const transactionHash = tx.hash;
-    flexmarketContract.on("CreateDrop", (newDropId)=> {
-      resolve({dropId: newDropId.toString() , transactionHash});
-    });
     log('CreateDrop ', 'wait for the tx...');
     
     // console.log(receipt.events);

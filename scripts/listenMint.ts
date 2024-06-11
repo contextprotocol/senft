@@ -61,10 +61,7 @@ async function main() {
     spinStop();
     log('Collection metadata  : ', `https://app.ctx.xyz/d/${domainName}/${confData.path}` )
 
-    fs.writeFileSync(`./data/nfts/${tokenId}.json`, JSON.stringify({
-      versionNumber: '1.0.0',
-      data
-    }));
+    fs.writeFileSync(`./data/nfts/${tokenId}.json`, JSON.stringify(nftData));
 
     // Step three : update the NFT (metadata).
     spinStart('Updating NFT metadata');

@@ -1,13 +1,13 @@
 {
     "chainId": "421614",
-    "name": "ArbiDev Legends",
+    "name": "ArbiDev test #2",
     "symbol": "ADL",
     "description": "Be part of the best community of Devs for the Arbitrum community",
     "path": "nft",
     "image": "cover.png",
     "drops": {
         "gen0": {
-            "name": "Generation 0 - Legends",
+            "name": "Legends Gen 0",
             "description": "First generation of Arbitrum Coding Legends",
             "qty": 10,
             "price": "0.0001",
