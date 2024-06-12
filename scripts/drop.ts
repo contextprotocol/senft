@@ -116,6 +116,7 @@ async function setMinter(collectionContract, flexmarketContract) {
     const tx = await collectionContract.setMinter(flexmarketContract.target);
     await tx.wait();
     spinStop();
+    log('Minter  : ', 'SET');
 }
 async function logDrop(drop) {
   log('Name          :', drop.name);
@@ -138,7 +139,7 @@ async function createDrop(flexmarketContract, target, drop, treasury): Promise<{
       target,
       drop.qty,
       parseEther(drop.price),
-      drop.referral,
+      0,
       treasury
     );
     const transactionHash = tx.hash;
