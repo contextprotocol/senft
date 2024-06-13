@@ -33,7 +33,7 @@ async function main() {
     const nftData = {
       "name": confData.drops[dropName].nftName.replace('${tokenId}', tokenId),
       "description": confData.drops[dropName].nftDescription.replace('${tokenId}', tokenId),
-      "image": dropDocument.data.image,
+      "image": dropDocument.data.image.replace('ctx:', 'https://rpc.ctx.xyz/'),
       "action": "none",
       "price": 0,
       "attributes": [{

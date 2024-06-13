@@ -44,7 +44,7 @@ async function createMetadata(context, confData, domainName, nftAddress) {
         symbol: confData.symbol,
         description: confData.description,
         chainId: confData.chainId,
-        image: `ctx:${domainName}/assets/cover`,
+        image: `https://rpc.ctx.xyz/${domainName}/assets/cover`,
         address: nftAddress,
         totalSupply: 0
       },
